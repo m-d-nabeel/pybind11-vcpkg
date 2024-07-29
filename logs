@@ -1,0 +1,34 @@
+sudo apt-get install autoconf automake autoconf-archive
+The package python3 provides a python interpreter that supports virtual environments:
+
+    $ tools/python3/python3.11 -m venv /path/to/venv
+    $ export VIRTUAL_ENV=/path/to/venv
+    $ export PATH=/path/to/venv/bin:$PATH
+    $ export -n PYTHONHOME
+    $ unset PYTHONHOME
+
+    See https://docs.python.org/3/library/venv.html for more details.
+
+pybind11 provides CMake targets. There are two modes provided; classic, which is built on the old Python
+discovery packages in CMake, or the new FindPython mode, which uses FindPython
+from 3.12+ forward (3.15+ _highly_ recommended).
+
+New FindPython mode:
+
+    find_package(Python COMPONENTS Interpreter Development)
+    find_package(pybind11 CONFIG)
+
+    # pybind11 method:
+    pybind11_add_module(MyModule1 src1.cpp)
+
+    # Python method:
+    Python_add_library(MyModule2 src2.cpp)
+    target_link_libraries(MyModule2 pybind11::headers)
+    set_target_properties(MyModule2 PROPERTIES
+        INTERPROCEDURAL_OPTIMIZATION ON
+        CXX_VISIBILITY_PRESET ON
+        VISIBILITY_INLINES_HIDDEN ON
+    )
+
+For more information see here:
+    https://pybind11.readthedocs.io/en/latest/compiling.html#building-with-cmake

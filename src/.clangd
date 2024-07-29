@@ -1,0 +1,6 @@
+CompileFlags:
+  Add: 
+    - -std=c++17
+    - -I/home/m-d-nabeel/Projects/pybind/vcpkg_installed/x64-linux/include
+    - -I/home/m-d-nabeel/Projects/pybind/vcpkg_installed/x64-linux/include/python3.11
+  

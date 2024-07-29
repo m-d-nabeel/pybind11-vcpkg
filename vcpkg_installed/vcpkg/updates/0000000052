@@ -1,0 +1,8 @@
+Package: libffi
+Version: 3.4.6
+Depends: vcpkg-cmake-get-vars
+Architecture: x64-linux
+Multi-Arch: same
+Abi: 32e79e2ea5ba1767a0ce299e78eda5102a67865d7679f64da6d522650eedd5ca
+Description: Portable, high level programming interface to various calling conventions
+Status: install ok half-installed

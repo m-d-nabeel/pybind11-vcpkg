@@ -1,0 +1,8 @@
+{
+  "dependencies": [
+    "pybind11",
+    "python3",
+    "vcpkg-cmake",
+    "vcpkg-cmake-config"
+  ]
+}
