@@ -1,0 +1,25 @@
+BasedOnStyle: LLVM
+ColumnLimit: 150
+UseTab: Never
+TabWidth: 2
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+IndentCaseLabels: false
+AlignAfterOpenBracket: false
+AlignConsecutiveAssignments: true
+AlignEscapedNewlinesLeft: true
+AlignOperands: false
+AlignTrailingComments: true
+IncludeCategories:
+  - Regex: '^<.*\.h>'        # C standard library headers (e.g., <stdio.h>, <stdlib.h>)
+    Priority: 3
+  - Regex: '^<.*>'           # C++ standard library headers (e.g., <vector>, <string>)
+    Priority: 2
+  - Regex: '^".*\.h"'        # Project headers with .h extension
+    Priority: 1
+  - Regex: '^".*"'           # Other project headers (without .h extension)
+    Priority: 1
+  - Regex: '.*'              # Any other includes
+    Priority: 0
