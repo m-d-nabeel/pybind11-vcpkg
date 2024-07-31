@@ -10,7 +10,19 @@ int main() {
   py::scoped_interpreter guard{};
 
   try {
+
+    // char buffer[MAX_PATH];
+    // // Get the path to the executable
+    // GetModuleFileName(NULL, buffer, MAX_PATH);
+    // // Convert to a filesystem path
+    // fs::path exe_path = fs::canonical(buffer);
+    // // Get the project root (two levels up)
+    // fs::path project_root = exe_path.parent_path().parent_path();
+    // // Construct the paths
+    // fs::path python_modules_path = project_root / "python_modules";
+    // fs::path site_packages_path  = project_root / "env/lib/python3.8/site-packages";
     // Get the executable path
+
     fs::path exe_path            = fs::canonical("/proc/self/exe");
     fs::path project_root        = exe_path.parent_path().parent_path();
     fs::path python_modules_path = project_root / "python_modules";
@@ -32,11 +44,12 @@ int main() {
     py::object result = hello.attr("greet")("World");
     std::cout << "Result from Python: " << result.cast<std::string>() << std::endl;
 
-    py::module_ spleeter         = py::module_::import("spleeter");
-    py::module_ spleeter_wrapper = py::module_::import("spleeter_wrapper");
-    py::object result2 =
-        spleeter_wrapper.attr("separate_audio")("/home/m-d-nabeel/Projects/pybind/example/on-and-on.mp3", "/home/m-d-nabeel/Projects/pybind/example");
-    std::cout << "Result from Python: " << result2.cast<std::string>() << std::endl;
+    std::cout << "Calling lib_example module" << std::endl;
+    py::module_ lib_example = py::module_::import("lib_example");
+
+    std::cout << "Calling class_example module" << std::endl;
+    py::module_ class_example = py::module_::import("class_example");
+    class_example.attr("run")();
 
   } catch (py::error_already_set &e) {
     std::cerr << "Python error: " << e.what() << std::endl;
