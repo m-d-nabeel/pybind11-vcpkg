@@ -1,9 +1,0 @@
-Package: openssl
-Version: 3.3.1
-Port-Version: 1
-Depends: vcpkg-cmake, vcpkg-cmake-config, vcpkg-cmake-get-vars
-Architecture: x64-linux
-Multi-Arch: same
-Abi: dbeb772ff8c915b9a6f30b3a767db767de7df62905e49b0d20f40e4fcd1d10f5
-Description: OpenSSL is an open source project that provides a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. It is also a general-purpose cryptography library.
-Status: install ok installed

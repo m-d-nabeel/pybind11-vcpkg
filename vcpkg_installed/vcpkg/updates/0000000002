@@ -1,9 +1,0 @@
-Package: python3
-Version: 3.11.8
-Port-Version: 4
-Depends: bzip2, expat, libffi, liblzma, libuuid, openssl, sqlite3, vcpkg-get-python, zlib
-Architecture: x64-linux
-Multi-Arch: same
-Abi: 9e83e5e0ecd8db72933dd5eee07c57c973c62e20a6c33e9c9f4cf1cd774081f3
-Description: The Python programming language
-Status: purge ok half-installed

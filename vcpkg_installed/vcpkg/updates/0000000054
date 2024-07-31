@@ -1,9 +1,0 @@
-Package: expat
-Version: 2.6.2
-Port-Version: 1
-Depends: vcpkg-cmake, vcpkg-cmake-config
-Architecture: x64-linux
-Multi-Arch: same
-Abi: 7834fd6f17dc10fa07a4e473de24e01ca2425f54c66a6aa04cbab3688e7a2d65
-Description: XML parser library written in C
-Status: install ok half-installed
