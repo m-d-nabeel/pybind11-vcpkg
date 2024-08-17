@@ -235,3 +235,4 @@ cython_debug/
 
 vcpkg_installed/
 example/
+logs
